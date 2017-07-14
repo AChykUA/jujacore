@@ -1,4 +1,4 @@
-package week02.quiz11;
+package ua.com.juja.core.week02.quiz11;
 
 /**
  * Created by CooLlGhosT on 13.07.2017.

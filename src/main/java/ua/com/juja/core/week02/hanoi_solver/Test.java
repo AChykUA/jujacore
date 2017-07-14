@@ -1,4 +1,4 @@
-package week02.hanoi_solver;
+package ua.com.juja.core.week02.hanoi_solver;
 
 import java.util.ArrayList;
 import java.util.Arrays;

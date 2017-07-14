@@ -1,4 +1,4 @@
-package week02.parser_demo;
+package ua.com.juja.core.week02.parser_demo;
 
 /**
  * Created by CooLlGhosT on 12.07.2017.
