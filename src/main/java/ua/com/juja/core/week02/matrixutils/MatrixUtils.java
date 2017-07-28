@@ -5,29 +5,32 @@ package ua.com.juja.core.week02.matrixutils;
  */
 public class MatrixUtils {
     public static int[][] mul(int[][] fst, int[][] snd ){
-        if ( fst == null || snd == null ) {
-            throw new IllegalArgumentException();
-        }
-        if (fst.length != fst[0].length || snd.length != snd[0].length) {
-            throw new IllegalArgumentException();
+
+        if (fst == null || snd == null) throw new IllegalArgumentException();
+        if (fst[0] == null || snd[0] == null) throw new IllegalArgumentException();
+        if (fst[0].length != snd.length) throw new IllegalArgumentException();
+
+        int fstWidth = fst[0].length;
+        for (int i = 1; i < fst.length; i++) {
+            if (fst[i] == null || fst[i].length != fstWidth) throw new IllegalArgumentException();
         }
 
-        if (snd.length != fst[0].length) {
-            throw new IllegalArgumentException();
+        int sndWidth = snd[0].length;
+        for (int i = 1; i < snd.length; i++) {
+            if (snd[i] == null || snd[i].length != sndWidth) throw new IllegalArgumentException();
         }
 
-        int m = fst.length;
-        int n = snd[0].length;
-        int o = snd.length;
-        int[][] res = new int[m][n];
+        int[][] res = new int[fst.length][sndWidth];
 
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                for (int k = 0; k < o; k++) {
+        for (int i = 0; i < res.length; i++) {
+            for (int j = 0; j < res[0].length; j++) {
+                res[i][j] = 0;
+                for (int k = 0; k < fstWidth; k++) {
                     res[i][j] += fst[i][k] * snd[k][j];
                 }
             }
         }
+
         return res;
     }
 }
