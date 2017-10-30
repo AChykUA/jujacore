@@ -12,7 +12,6 @@ public class ArrayUtils {
             if (arg[i] == null || arg[i].length != d) return null;
         }
 
-
         int[][] res = new int[d][d];
 
         for (int i = 0; i < d; i++) {
